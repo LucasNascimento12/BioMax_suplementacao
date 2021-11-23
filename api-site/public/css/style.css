@@ -68,10 +68,11 @@ body {
 /* BANNER */
 
 .banner {
-  height: 580px;
+  height: 180px;
   color: white;
   /* border: 3px solid yellow; */
   background-image: url(".././assets/imgs/mulher-olhando-para-o-lado_multivitaminico.png");
+  
   background-size: cover;
 }
 
@@ -82,7 +83,7 @@ body {
 
 .banner .container {
   /* border: 3px solid green; */
-  height: 500px;
+  height: 400px;
   display: flex;
   align-items: center;
 }
@@ -166,7 +167,7 @@ body {
 .footer {
   background-color: #385053;
   height: 140px;
-  color: white;
+  color: rgb(0, 0, 0);
   margin: 0;
   padding: 0;
   display: flex;
@@ -190,7 +191,7 @@ h4 {
 /* LOGIN */
 
 .banner-login {
-  color: white;
+  color: rgb(187, 25, 25);
   height: 550px;
   /* border: 3px solid yellow; */
   background-image: url(".././assets/imgs/banner-fundo.jpeg");
@@ -206,11 +207,11 @@ h4 {
 }
 
 .banner-login {
-  color: #e6005a;
+  color: white;
 }
 
 .banner-login .card {
-  background-color: #e5e5e5;
+  background-color: rgb(49, 39, 39);
   height: 450px;
   width: 400px;
   display: flex;
@@ -219,10 +220,13 @@ h4 {
   align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
+  border: 0,0,0,0;
+  margin: 0,0,0,0;
+  align-self: center;
 }
 
 .banner-login a {
-  color: white;
+  color: rgb(175, 44, 44);
   text-decoration: none;
 }
 
@@ -239,8 +243,9 @@ button {
 input {
   height: 30px;
   width: 200px;
-  border: 2px solid #2a00e6;
-  border-radius: 10px;
+  border: 1px ridge #6b3333;
+  border-radius: 20px;
+  padding: 0px,0px,0px,150px;
 }
 
 
@@ -251,8 +256,8 @@ input {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
+  color: rgb(255, 255, 255);
+  background-color: #0400e6;
   width: 120px;
   align-self: center;
 }
@@ -284,7 +289,7 @@ form {
 
 .header-left a {
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .header-left {
