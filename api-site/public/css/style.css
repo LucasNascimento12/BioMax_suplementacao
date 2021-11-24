@@ -8,7 +8,7 @@ body {
 .informacao-de-qualidade{
   background-color:black;
   color: whitesmoke;
-  width: 100%;
+  width: 97vw;
   height: 30px;
   text-align: center;
   vertical-align: middle;
@@ -27,7 +27,7 @@ body {
 }
 .container > input {
   height: 30px;
-  width: 800px;
+  width: 1000px;
   border: 2px solid #00e6c7;
   border-radius: 0px;
   margin-left: 150px;
@@ -65,10 +65,17 @@ body {
   /* border: 3px solid green; */
 }
 
+.navbar > li {
+
+  justify-content: space-evenly;
+  margin-left: 50px;
+  
+}
+
 /* BANNER */
 
 .banner {
-  height: 180px;
+  height: 580px;
   color: white;
   /* border: 3px solid yellow; */
   background-image: url(".././assets/imgs/mulher-olhando-para-o-lado_multivitaminico.png");
@@ -166,7 +173,7 @@ body {
 
 .footer {
   background-color: #385053;
-  height: 140px;
+  height: 90px;
   color: rgb(0, 0, 0);
   margin: 0;
   padding: 0;
@@ -207,12 +214,13 @@ h4 {
 }
 
 .banner-login {
-  color: white;
+  color: black;
+  margin-left: 20px;
 }
 
 .banner-login .card {
-  background-color: rgb(49, 39, 39);
-  height: 450px;
+  background-color: rgb(117, 194, 41);
+  height: 500px;
   width: 400px;
   display: flex;
   justify-content: center;
@@ -223,10 +231,13 @@ h4 {
   border: 0,0,0,0;
   margin: 0,0,0,0;
   align-self: center;
+  border-radius: 50px;
+  margin-left: 110px;
+  margin-bottom: 40px;
 }
 
 .banner-login a {
-  color: rgb(175, 44, 44);
+  color: black;
   text-decoration: none;
 }
 
@@ -243,7 +254,7 @@ button {
 input {
   height: 30px;
   width: 200px;
-  border: 1px ridge #6b3333;
+  border: 1px ridge #406b33;
   border-radius: 20px;
   padding: 0px,0px,0px,150px;
 }
@@ -256,7 +267,7 @@ input {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: rgb(255, 255, 255);
+  color: white;
   background-color: #0400e6;
   width: 120px;
   align-self: center;
@@ -289,7 +300,7 @@ form {
 
 .header-left a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 .header-left {
@@ -340,7 +351,7 @@ form {
 
 .btn-nav {
   width: 40%;
-  color: white;
+  color: rgb(105, 30, 30);
   background-color: #e6005a;
   border-radius: 5px;
   text-align: center;
