@@ -6,17 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AcquaTec | Simulador</title>
+    <title>AcquaTec | Login</title>
 
     <script src="./js/funcoes.js"></script>
 
     <link rel="icon" href="./assets/icon/favicon.ico">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/produto.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
@@ -28,11 +27,11 @@
             <input id="solicitar_o_suplmento" placeholder="pesquise seu suplemento">
             <ul class="navbar">
                 <li ><a href="./index.html">Inicial</a></li>
-                <li class="agora">
+                <li>
                     <a href="./simulador.html">Simulador</a>
                 </li>
                 <li>|</li>
-                <li>
+                <li class="agora">
                     <a href="./login.html">Login</a>
                 </li>
                 <li>
@@ -42,52 +41,78 @@
         </div>
     </div>
 
+      <div class="produtos">
+        <div class="linhas_growth">
+          <div class="parceiros">Growth</div>
+          <img src="assets/imgs/whey - growth.png">
+          <img src="assets/imgs/omega 3 - growth.png">
+          <img src="assets/imgs/multivitamínico - growth.jpeg">
+          <img src="assets/imgs/pasta de amendoin -growth.jpeg">
+        </div>
+        <div class="botoes">
+          <button onclick="whey_growth()">comprar</button>
+          <button onclick="growth_omega3()">comprar</button>
+          <button onclick="growth_multivitamínico()">comprar</button>
+          <button onclick="growth_pasta_amendoin()">comprar</button>
+        </div>
 
-    <div class="graph">
-        <canvas id="myChart" style="width: 100%; height: 100%"></canvas>
-    </div>
+        <div class="linhas_maxtitanium">
+          <div class="parceiros1">Max Titanium</div>
+          <img src="assets/imgs/whey protein maxtitanium.jpeg">
+          <img src="assets/imgs/multivitamínico maxtitanium.jpeg">
+          <img src="assets/imgs/multivitamínico maxtitanium.jpeg">
+        </div>
+        <div class="botoes">
+          <button onclick="whey_growth()">comprar</button>
+          <button onclick="growth_omega3()">comprar</button>
+          <button onclick="growth_multivitamínico()">comprar</button>
+        </div>
 
+        <div class="linhas_ultrafarma">
+          <div class="parceiros2">Ultra Farma</div>
+          <img src="assets/imgs/multivitamínico_ultrafarma.jpg">
+          <img src="assets/imgs/ultrafarma omega3.jpeg">
+        </div>
+        <div class="botoes">
+          <button onclick="growth_omega3()">comprar</button>
+          <button onclick="growth_multivitamínico()">comprar</button>
+        </div>
+
+
+        <div class="linhas_integralmedica">
+          <div class="parceiros3">Integral médica</div>
+          <img src="assets/imgs/whey integralmedica.jpeg">
+          <img src="assets/imgs/multivitamínico integralmedica.jpeg">
+          <img src="assets/imgs/integralmedica omega3.jpeg">
+          <img src="assets/imgs/pasta de amendoim integralmedica.jpeg">
+        </div>
+        <div class="botoes">
+          <button onclick="growth_omega3()">comprar</button>
+          <button onclick="growth_multivitamínico()">comprar</button>
+          <button onclick="growth_omega3()">comprar</button>
+          <button onclick="growth_multivitamínico()">comprar</button>
+        </div>
+
+        <div class="linhas_puravida">
+          <div class="parceiros4">Pura vida</div>
+          <img src="assets/imgs/puravida whey_protein.jpeg">
+          <img src="assets/imgs/puravida omega3.jpeg">
+          <img src="assets/imgs/puravida_multivitamínico.jpg">
+        </div>
+
+        <div class="botoes">
+          <button onclick="growth_omega3()">comprar</button>
+          <button onclick="growth_multivitamínico()">comprar</button>
+          <button onclick="growth_omega3()">comprar</button>
+          <button onclick="growth_multivitamínico()">comprar</button>
+        </div>
+
+      </div>
+
+   
     <!--footer inicio-->
     <div class="footer">
         <div class="container">
             <h4>Feito com amor por um aluno BandTec &copy; 2021</h4>
         </div>
     </div>
-    <!--footer fim-->
-
-
-</body>
-
-</html>
-
-
-<script>
-    // Inicia uma variável do tipo constante (não pode ser reatribuida)
-    const config = { 
-      type: "line", // tipo do gráfico
-      data: { // objeto que vai conter os dados do gráfico
-        labels: ["2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018","2019", "2020", "2021"], // labels (rótulos) que serão identificados os nossos dados 
-        datasets: [ // datasets (conjunto de dados)
-          {
-            label: "Salário mínimo", // irá conter o rótulo principal do nosso gráfico
-            data: [540,622,678,724,788,880,937,954,998,1045,1100], // os dados referentes aqueles rótulos
-            backgroundColor: "black", // cor das "bolinhas" do gráfico
-            borderColor: "red" // cor da "linha" do gráfico
-          }
-        ]
-      },
-      options: {
-        maintainAspectRatio: false 
-        /* maintainAspectRatio (manter relação de aspecto) 
-          caso true: ele "obdece" a altura e largura que colocamos
-          caso false: ele não "obdece" a altura e largura que colocamos e se ajusta ao componente pai
-        */
-      }
-    }
-  
-    var myChartLine = new Chart(document.getElementById("myChart"), config); 
-    /* aqui obrigatoriamente tem que colocar new Chart() para criar um novo chart 
-    e passar dentro dos (parênteses) o elemento canvas que você quer mandar e 
-    separado pela virgula o que você quer mandar, no nosso caso a config que fizemos 
-    */
-  </script>
