@@ -35,7 +35,7 @@ body {
 
 .header {
   color: #32b9cd;
-  border-bottom: 3px solid #32b9cd;
+  border-bottom: 5px solid #32b9cd;
   /* border: 3px solid yellow; */
 }
 
@@ -216,7 +216,7 @@ h4 {
 
 .banner-login {
   color: black;
-  margin-left: 20px;
+
 }
 
 .banner-login .card {
@@ -238,10 +238,33 @@ h4 {
   margin-top: 90px;
 }
 
+.banner-login .card-login {
+
+  background-color: rgb(117, 194, 41);
+  height: 300px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 0,0,0,0;
+  margin: 0,0,0,0;
+  align-self: center;
+  border-radius: 0px;
+  margin-left: 110px;
+  margin-bottom: 40px;
+  margin-top: 90px;
+}
+
+
+
 .banner-login a {
   color: black;
   text-decoration: none;
   margin: 0px;
+  border-radius: 0px;
 }
 
 .banner-login #div_erros_login {
