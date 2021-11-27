@@ -188,10 +188,16 @@ body {
 .footer .container {
     display: flex;
     justify-content: center;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: medium;
 }
 
 .footer>.container>a {
-    color: #fffb00;
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: medium;
 }
 
 h4 {
@@ -554,7 +560,7 @@ form {
     margin-bottom: 20px;
     display: grid;
     margin-top: 20px;
-    
+   
   }
   
   .social1 .container1 {
@@ -576,13 +582,12 @@ form {
   
   .social1 h2 {
     display: flex;
-    background-color: #e6005a;
-    width: 80px;
+   
     border-radius: 200px;
     align-self: center;
     justify-self: center;
     text-align: center;
-    color: white;
+    color: black;
     margin: 0;
     padding: 20px;
     margin: auto;
@@ -629,6 +634,7 @@ form {
   margin-bottom: 20px;
     display: grid;
     margin-top: 20px;
+    border-bottom: #161618;
   }
   
   .social2 .container2 {
