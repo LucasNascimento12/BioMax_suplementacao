@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BioMax | Cadastro</title>
+
+
+    <script src="./js/funcoes.js"></script>
+
+
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <script src="./js/saudacoes-usuario-cadastrado.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="informacao-de-qualidade"> Confiança nos nossos fornecedores </div>
+        <div class="container">
+            <img src="assets/icon/favicon2.png" width="100px">
+            <ul class="navbar">
+                <li>
+                    <a href="./index.html">Inicial</a>
+                </li>
+                <li>
+                    <a href="./cadastro.html">Cadastro</a>
+                </li>
+                <li> <a href="./login.html">Login</a></li>
+                <li>
+                    <a href="./simulador.html">Simulador</a>
+                </li>
+                <li id="NOME_USUARIO">
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner-login ">
+        <div class="container ">
+            <div class="card medio">
+                <h1>Cadastre-se aqui !</h1>
+                <div class="formulario">
+                    <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                        Nome:
+                        <input id="nome" name="nome" type="text" placeholder="nome">
+                        <br>
+                        Endereço:
+                        <input id="endereco" name="endereco" type="text" placeholder="logradouro">
+                        <br>
+                        <label for="telefone">Telefone:</label>
+                        <input id="telefone" name="telefone" type="text" placeholder="(11)987654321" data-mask="(__) _____-____">
+                        <br>
+                        E-mail:
+                        <input id="email" name="email" type="email" placeholder="meuemail@exemplo.com">
+                        <br>
+                        Senha:
+                        <input id="senha" name="senha" type="password" placeholder="******">
+                        <br>
+                        Confirmação da Senha:
+                        <input name="confirmacao-senha" type="password" placeholder="******">
+                        <br>
+                        <button class="btn">Cadastrar</button>
+                    </form>
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+
+            <a href="https://www.gsuplementos.com.br/">Growth</a>
+            <a href="https://www.maxtitanium.com.br/">Max titanium</a>
+            <a href="https://www.oficialfarma.com.br/">Oficial farma</a>
+            <a
+                href="https://www.integralmedica.com.br/?gclid=Cj0KCQiAy4eNBhCaARIsAFDVtI1zhKO09nMAVQ27SuKCvQSRmiY9mqUwYb37VHGPlbMzKETMCs5Tc6caAicWEALw_wcB">Intergralmedica</a>
+            <a href="https://www.puravida.com.br/">Pura vida</a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    Array.prototype.forEach.call(document.body.querySelectorAll("*[data-mask]"), applyDataMask);
+
+        function applyDataMask(field) {
+        var mask = field.dataset.mask.split('');
+        
+        // For now, this just strips everything that's not a number
+        function stripMask(maskedData) {
+            function isDigit(char) {
+                return /\d/.test(char);
+            }
+            return maskedData.split('').filter(isDigit);
+        }
+        
+        // Replace `_` characters with characters from `data`
+        function applyMask(data) {
+            return mask.map(function(char) {
+                if (char != '_') return char;
+                if (data.length == 0) return char;
+                return data.shift();
+            }).join('')
+        }
+        
+        function reapplyMask(data) {
+            return applyMask(stripMask(data));
+        }
+        
+        function changed() {   
+            var oldStart = field.selectionStart;
+            var oldEnd = field.selectionEnd;
+            
+            field.value = reapplyMask(field.value);
+            
+            field.selectionStart = oldStart;
+            field.selectionEnd = oldEnd;
+        }
+        
+        field.addEventListener('click', changed)
+        field.addEventListener('keyup', changed)
+    }
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var nome = formulario.get("nome");
+        var endereco = formulario.get("endereco");
+        var telefone = formulario.get("telefone");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var confirmacaoSenha = formulario.get("confirmacao-senha");
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "") {
+                console.log('nome está em branco')
+            }
+            if (email == "") {
+                console.log('email está em branco')
+            }
+            if (senha == "") {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenha == "") {
+                console.log('confirmacaoSenha está em branco')
+            }
+            finalizarAguardar();
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert(`Ops, e-mail ${email} inválido! Verifique e tente novamente.`);
+            finalizarAguardar();
+            return false;
+        }
+
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/clientes/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            window.alert(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+</script>

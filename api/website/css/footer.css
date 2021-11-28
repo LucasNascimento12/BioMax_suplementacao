@@ -1,0 +1,25 @@
+.footer {
+    background-color: black;
+    height: 120px;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.footer .container {
+    display: flex;
+    justify-content: center;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: medium;
+}
+
+.footer>.container>a {
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: medium;
+}

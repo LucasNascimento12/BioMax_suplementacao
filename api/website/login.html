@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BioMax | Login</title>
+
+    <script src="./js/funcoes.js"></script>
+
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+        <script src="./js/saudacoes-usuario-cadastrado.js"></script>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="informacao-de-qualidade"> Confiança nos nossos fornecedores </div>
+        <div class="container">
+            <img src="assets/icon/favicon2.png" width="100px">
+            <ul class="navbar">
+                <li>
+                    <a href="./index.html">Inicial</a>
+                </li>
+                <li>
+                    <a href="./cadastro.html">Cadastro</a>
+                </li>
+                <li> <a href="./login.html">Login</a></li>
+                <li>
+                    <a href="./simulador.html">Simulador</a>
+                </li>
+                <li id="NOME_USUARIO">
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="banner-login">
+        <div class="container">
+            <div class="card-login">
+                <h2>Efetue o seu login</h2>
+                <div class="formulario">
+                    <form id="form_login" method="post" onsubmit="return entrar()">
+                        E-mail:
+                        <input name="email" type="text" placeholder="Login">
+                        <br>
+                        Senha:
+                        <input name="senha" type="password" placeholder="******">
+                        <br>
+                        <button class="btn" type="submit">
+                            Entrar
+                        </button>
+                    </form>
+
+
+                </div>
+
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+
+            <a href="https://www.gsuplementos.com.br/">Growth</a>
+            <a href="https://www.maxtitanium.com.br/">Max titanium</a>
+            <a href="https://www.oficialfarma.com.br/">Oficial farma</a>
+            <a
+                href="https://www.integralmedica.com.br/?gclid=Cj0KCQiAy4eNBhCaARIsAFDVtI1zhKO09nMAVQ27SuKCvQSRmiY9mqUwYb37VHGPlbMzKETMCs5Tc6caAicWEALw_wcB">Intergralmedica</a>
+            <a href="https://www.puravida.com.br/">Pura vida</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function limparFormulario() {
+        document.getElementById("form_login").reset();
+    }
+
+    function entrar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (email == "" || senha == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+
+        fetch("/clientes/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email_cliente;
+                    sessionStorage.NOME_USUARIO = json.nome_cliente;
+                    sessionStorage.ID_USUARIO = json.id_cliente;
+
+                    setTimeout(function () {
+                        window.location = "./produtos.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</script>

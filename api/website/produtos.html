@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Biomax | Login</title>
+
+    <script src="./js/funcoes.js"></script>
+    <script src="./js/produtos.js"></script>
+    <script src="./js/saudacoes-usuario-cadastrado.js"></script>
+
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/produto.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="informacao-de-qualidade"> Confiança nos nossos fornecedores </div>
+        <div class="container">
+            <img src="assets/icon/favicon2.png" width="100px">
+            <ul class="navbar">
+                <li>
+                    <a href="./index.html">Inicial</a>
+                </li>
+                <li>
+                    <a href="./cadastro.html">Cadastro</a>
+                </li>
+                <li> <a href="./login.html">Login</a></li>
+                <li>
+                    <a href="./simulador.html">Simulador</a>
+                </li>
+                <li id="NOME_USUARIO">
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div class="social1">
+        <div class="container1">
+
+            <div class="titulo1">
+                <h2>growth</h2>
+            </div>
+            <div class="boxes1">
+
+                <div class="box1">
+                    <img src="./assets/imgs/whey - growth.png" alt="icone da missão">
+                    <h4>Whey protein <br> R$89,90
+                    </h4>
+                    <p><button onclick="whey_growth1()" class="mudar_botao1">Experimente</button></p>
+
+                </div>
+
+                <div class="box1">
+                    <img src="./assets/imgs/multivitamínico - growth.jpeg" alt="icone da visão">
+                    <h4>multivitamínico <br> R$44,90</h4>
+                    <p><button onclick="multi_growht1()" class="mudar_botao1">Experimente</button></p>
+                </div>
+
+                <div class="box1">
+                    <img src="./assets/imgs/pasta de amendoin -growth.jpeg" alt="icone da visão">
+                    <h4>pasta de amendoin<br> R$22,00</h4>
+                    <p><button onclick="pasta_growht1()" class="mudar_botao1">Experimente</button></p>
+                </div>
+
+                <div class="box1">
+                    <img src="./assets/imgs/omega 3 - growth.png" alt="icone dos valores">
+                    <h4>ômega 3 <br> R$40,50</h4>
+                    <p><button onclick="ome_growth1()" class="mudar_botao1">Experimente</button></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="social2">
+        <div class="container2">
+
+            <div class="titulo2">
+                <h2>Max titanium</h2>
+            </div>
+            <div class="boxes2">
+                <div class="box2">
+                    <img src="./assets/imgs/whey protein maxtitanium.jpeg">
+                    <h4>Whey protein <br> R$109,90</h4>
+                    <p><button onclick="whey_max()" class="mudar_botao2">Experimente</button></p>
+                </div>
+
+                <div class="box2">
+                    <img src="./assets/imgs/multivitamínico maxtitanium.jpeg" alt="icone da visão">
+                    <h4>multivitamínico <br> R$44,90</h4>
+                    <p><button onclick="multi_max()" class="mudar_botao2">Experimente</button></p>
+                </div>
+
+
+
+                <div class="box2">
+                    <img src="./assets/imgs/ômega3 maxtitanium.jpeg" alt="icone dos valores">
+                    <h4>Ômega 3 <br> R$44,90</h4>
+                    <p><button onclick="ome_max()" class="mudar_botao2">Experimente</button></p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="social3">
+        <div class="container3">
+
+            <div class="titulo3">
+                <h2>Oficial Farma</h2>
+            </div>
+            <div class="boxes3">
+                <div class="box3">
+                    <img src="./assets/imgs/zma_oficialfarma.jpeg" alt="icone da missão">
+                    <h4>Zma turbo <br> R$22,90</h4>
+                    <p><button onclick="ZMA_oficial()" class="mudar_botao3">Experimente</button></p>
+                </div>
+
+                <div class="box3">
+                    <img src="./assets/imgs/oficialfarma arginina.jpeg" alt="icone da visão">
+                    <h4>Arginina <br> R$52,00</h4>
+                    <p><button onclick="Arginina_oficial()" class="mudar_botao3">Experimente</button></p>
+                </div>
+
+                <div class="box3">
+                    <img src="./assets/imgs/ultrafarma omega3.jpeg" alt="icone da visão">
+                    <h4>Ômega 3 <br> R$50,90</h4>
+                    <p><button onclick="Omega_oficial()" class="mudar_botao3">Experimente</button></p>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+        <div class="social4">
+            <div class="container4">
+
+                <div class="titulo4">
+                    <h2>Integralmedica</h2>
+                </div>
+                <div class="boxes4">
+                    <div class="box4">
+                        <img src="./assets/imgs/whey integralmedica.jpeg" alt="icone da missão">
+                        <h4>Whey protein <br> R$109,50</h4>
+                        <p><button onclick="whey_integral()" class="mudar_botao4">Experimente</button></p>
+                    </div>
+
+                    <div class="box4">
+                        <img src="./assets/imgs/integralmedica omega3.jpeg" alt="icone da visão">
+                        <h4>Ômega 3 <br> R$74,90 </h4>
+                        <p><button onclick="ome_integral()" class="mudar_botao4">Experimente</button></p>
+                    </div>
+
+                    <div class="box4">
+                        <img src="./assets/imgs/multivitamínico integralmedica.jpeg" alt="icone da visão">
+                        <h4>multivitamínico <br> R$91,40</h4>
+                        <p><button onclick="multi_integral()" class="mudar_botao4">Experimente</button></p>
+                    </div>
+
+                    <div class="box4">
+                        <img src="./assets/imgs/pasta de amendoim integralmedica.jpeg" alt="icone da visão">
+                        <h4>Pasta de amendoin <br> R$45,21 </h4>
+                        <p><button onclick="pasta_integral()" class="mudar_botao4">Experimente</button></p>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="social5">
+                <div class="container5">
+
+                    <div class="titulo5">
+                        <h2>Pura vida</h2>
+                    </div>
+                    <div class="boxes5">
+                        <div class="box5">
+                            <img src="./assets/imgs/puravida whey_protein.jpeg" alt="icone da missão">
+                            <h4>Whey protein <br> R$271,90</h4>
+                            <p><button onclick="whey_pura()" class="mudar_botao5">Experimente</button></p>
+                        </div>
+
+                        <div class="box5">
+                            <img src="./assets/imgs/puravida_multivitamínico.jpg" alt="icone da visão">
+                            <h4>multivitamínico <br> R$131,70 </h4>
+                            <p><button onclick="multi_pura()" class="mudar_botao5">Experimente</button></p>
+                        </div>
+
+                        <div class="box5">
+                            <img src="./assets/imgs/puravida omega3.jpeg" alt="icone da visão">
+                            <h4>Ômega3 <br> R$99,90</h4>
+                            <p><button onclick="omega_pura()" class="mudar_botao5">Experimente</button></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    </div>
+
+</body>
